@@ -2,6 +2,9 @@
 
 Transform default HTML `<select>` tags into Choices.js dropdowns for an enhanced user experience.  
 
+If you find it useful, please consider giving it a star.
+
+
 ## Usage
 
 - Click on the Violentmonkey menu command to apply [Choices.js](https://github.com/Choices-js/Choices)

@@ -4,14 +4,14 @@
 // @version      0.1.1
 // @description  Transform default HTML <select> tags into Choices.js dropdowns for an enhanced user experience.
 // @icon         https://raw.githubusercontent.com/iCross/my_choices/main/icon.jpg
+// @license      MIT
 // @author       https://github.com/iCross
 // @homepageURL  https://github.com/iCross/my_choices
 // @supportURL   https://github.com/iCross/my_choices/issues
-// @downloadURL  https://github.com/iCross/my_choices/raw/main/my_choices.user.js
 // @match        *://*/*
 // @grant        GM_registerMenuCommand
-// @require      https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js
-// @require      https://cdn.jsdelivr.net/npm/@violentmonkey/shortcut
+// @require      https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js
+// @require      https://cdn.jsdelivr.net/npm/@violentmonkey/shortcut@1
 // ==/UserScript==
 
 (function () {
@@ -22,7 +22,7 @@
   function addChoicesCSS() {
     const choicesCSSLink = document.createElement("link");
     choicesCSSLink.href =
-      "https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css";
+      "https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/base.min.css";
     choicesCSSLink.rel = "stylesheet";
     console.log("Adding Choices.js CSS");
     document.head.appendChild(choicesCSSLink);
