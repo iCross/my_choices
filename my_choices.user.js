@@ -2,7 +2,7 @@
 // @name         My Choices
 // @namespace    https://github.com/iCross
 // @version      0.1.1
-// @description  Replace default select menus with Choices.js
+// @description  Transform default HTML <select> tags into Choices.js dropdowns for an enhanced user experience.
 // @icon         https://raw.githubusercontent.com/iCross/my_choices/main/icon.jpg
 // @author       https://github.com/iCross
 // @homepageURL  https://github.com/iCross/my_choices
