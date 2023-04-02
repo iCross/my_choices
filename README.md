@@ -1,6 +1,6 @@
 # My Choices
 
- Transform default HTML <select> tags with numerous options into [Choices.js](https://github.com/Choices-js/Choices) dropdowns for an enhanced and more manageable user experience.
+Transform default HTML `<select>` tags with numerous options into [Choices.js](https://github.com/Choices-js/Choices) dropdowns for an enhanced and more manageable user experience.
 
 
 If you find it useful, please consider giving it a star.
