@@ -7,16 +7,17 @@
 // @license      MIT
 // @author       https://github.com/iCross
 // @homepageURL  https://github.com/iCross/my_choices
+// @downloadURL  https://github.com/iCross/my_choices/raw/main/my_choices.user.js
 // @supportURL   https://github.com/iCross/my_choices/issues
 // @match        *://*/*
 // @grant        GM_registerMenuCommand
 // @require      https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js
 // @require      https://cdn.jsdelivr.net/npm/@violentmonkey/shortcut@1
 // ==/UserScript==
-
+ 
 (function () {
   "use strict";
-
+ 
   // console.log("Userscript is running.");
   // Add Choices.js CSS to the document
   function addChoicesCSS() {
@@ -26,7 +27,7 @@
     choicesCSSLink.rel = "stylesheet";
     console.log("Adding Choices.js CSS");
     document.head.appendChild(choicesCSSLink);
-
+ 
     const customStyle = document.createElement("style");
     customStyle.textContent = `
     .choices__list--dropdown,
@@ -37,34 +38,34 @@
   `;
     document.head.appendChild(customStyle);
   }
-
+ 
   // Replace default select menus with Choices.js
   function applyChoices() {
     console.log("Applying Choices.js.");
-
+ 
     document.querySelectorAll("select").forEach(function (select) {
       if (!select._choicesInstance) {
         // Create a new Choices instance with the 'itemSelectText' set to an empty string
-
+ 
         new Choices(select, {
           itemSelectText: "",
         });
       }
     });
   }
-
+ 
   const { register } = VM.shortcut;
-
+ 
   register("c-i", () => {
     console.log("You just pressed Shortcut in violetmonkey.");
-
+ 
     // Add Choices.js CSS when the keyboard shortcut is pressed
     addChoicesCSS();
-
+ 
     // Run once when the script is loaded
     applyChoices();
   });
-
+ 
   // Register a menu command to trigger the same function
   GM_registerMenuCommand("Apply Choices.js", () => {
     addChoicesCSS();
