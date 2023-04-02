@@ -5,6 +5,7 @@
 // @description  Replace default select menus with Choices.js
 // @author       https://github.com/iCross
 // @match        *://*/*
+// @grant        GM_registerMenuCommand
 // @require      https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js
 // @require      https://cdn.jsdelivr.net/npm/@violentmonkey/shortcut
 // ==/UserScript==
@@ -17,9 +18,9 @@
   // Add Choices.js CSS to the document
   function addChoicesCSS() {
     const choicesCSSLink = document.createElement("link");
-    choicesCSSLink.href =
-      "https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/base.min.css";
+    choicesCSSLink.href = "https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css";
     choicesCSSLink.rel = "stylesheet";
+    console.log("Adding Choices.js CSS");
     document.head.appendChild(choicesCSSLink);
   }
 
@@ -45,5 +46,12 @@
     // Run once when the script is loaded
     applyChoices();
   });
-})();
 
+
+  // Register a menu command to trigger the same function
+  GM_registerMenuCommand("Apply Choices.js", () => {
+    addChoicesCSS();
+    applyChoices();
+    console.log("Choices.js applied via menu command.");
+  });
+})();
